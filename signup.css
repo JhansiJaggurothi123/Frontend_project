@@ -58,7 +58,7 @@ h2 {
   margin-right: 15px;
 }
 
-#signup{
+a{
   display: block;
   width: 100%;
   padding: 10px;
@@ -69,6 +69,6 @@ h2 {
   border-radius: 5px;
   transition: background-color 0.3s;
 }
-#signup:hover {
+a:hover {
   background-color: #45a049;
 }
