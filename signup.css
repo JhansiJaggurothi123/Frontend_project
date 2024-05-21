@@ -1,0 +1,74 @@
+
+body, h2, form, div, label, input, a {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form {
+  margin-bottom: 15px;
+}
+.form label {
+  display: block;
+  margin-bottom: 5px;
+}
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="file"],
+.form input[type="radio"],
+.form input[type="checkbox"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+.form input[type="radio"],
+.form input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+.form label[for="male"],
+.form label[for="female"],
+.form label[for="other"],
+.form label[for="interest1"],
+.form label[for="interest2"],
+.form label[for="interest3"],
+.form label[for="interest4"] {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+#signup{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+#signup:hover {
+  background-color: #45a049;
+}
