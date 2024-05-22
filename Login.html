@@ -3,6 +3,7 @@
 <head>
   <title>Login Page</title>
   <link rel="stylesheet" href="login.css">
+  <script src="login.js" defer></script>
 </head>
 <body>
   <div class="login">
@@ -16,27 +17,9 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" placeholder="Enter the password" required>
       </div>
-      <button type="button" >Login</button>
+      <button type="submit"  >Login</button>
     </form>
   </div>
-  <script>
-  function validateForm() {
-    console.log("entered");
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-  const usernameRegex = /^[A-Za-z]{1,7}$/;
-  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{10}$/;
-  if (!usernameRegex.test(username)) {
-    alert('Username must contain only letters and be up to 7 characters long.');
-    return false;
-  }
-  if (!passwordRegex.test(password)) {
-    alert('Password must be exactly 10 characters long and contain at least one uppercase letter, one lowercase letter, and one digit.');
-    return false;
-  }
-  return true;
-}
-  </script>
 </body>
 </html>
 

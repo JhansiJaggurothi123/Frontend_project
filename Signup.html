@@ -3,11 +3,12 @@
 <head>
   <title>Signup Page</title>
   <link rel="stylesheet" type="text/css" href="signup.css">
+  <script src="Signup.js"></script>
 </head>
 <body>
   <div class="container">
     <h2>Sign Up</h2>
-    <form action="form" method="post">
+    <form action="form" onsubmit="ValidateForm(event)" method="post">
       <div class="form">
         <label for="username">Username</label>
         <input type="text" id="username" name="username" placeholder="enter the username"required>
@@ -49,7 +50,7 @@
         <label for="interest4">Traveling</label>
       </div>
       <div>
-        <a href="Landing.html">Sign Up</a>
+        <button type="submit">Sign Up</button>
       </div>
     </form>
   </div>
