@@ -22,6 +22,8 @@ function validateForm(event) {
       alert('Please select at least one interest.');
       return false;
     }
-    window.location.href="Landling.html"
+      // If validation passes, navigate to Landing.html
+      document.getElementById('loginForm').action = 'Landing.html';
+      document.getElementById('loginForm').method = 'GET';
     return true;
 }

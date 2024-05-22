@@ -12,7 +12,9 @@ function validateForm() {
     alert('Password must be between 6 to 10 characters long and contain at least one uppercase letter, one lowercase letter, one special character, and one digit.');
     return false;
   }
-  window.location.href= 'landing1.html';
+    // If validation passes, navigate to Landing.html
+    document.getElementById('loginForm').action = 'landing1.html';
+    document.getElementById('loginForm').method = 'GET';
   return true;
 }
 
