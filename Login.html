@@ -3,23 +3,33 @@
 <head>
   <title>Login Page</title>
   <link rel="stylesheet" href="login.css">
-  <script src="login.js" defer></script>
 </head>
 <body>
-  <div class="login">
-    <h2>Login</h2>
-    <form action="form" onsubmit="return validateForm()" method="post">
-      <div class="form">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" placeholder="Enter the username" required>
-      </div>
-      <div class="form">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter the password" required>
-      </div>
-      <button type="submit"  >Login</button>
-    </form>
-  </div>
+  <nav>
+    <img src="bitlabs.png" height="50px" width="50px"></img>
+    <div>
+      <ul>
+        <li><a href="index.html">Home Page</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="Login.html">Login</a></li>
+        <li><a href="Signup.html">Sign Up</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="loginForm" action="landing1.html" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" placeholder="Enter the user name" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" placeholder="Enter the password" required>
+        <button class="button" type="submit">Login</button>
+      </form>
+    </div>
+  </main>
+  <script src="login.js"></script>
+  </main>
 </body>
 </html>
 

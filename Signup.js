@@ -1,29 +1,53 @@
-function validateForm(event) {
-    event.preventDefault(); 
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirm-password').value;
-    const interests = document.querySelectorAll('input[name="interests"]:checked');
-    const usernameRegex = /^[A-Za-z]{1,7}$/;
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{6,10}$/;
-    if (!usernameRegex.test(username)) {
-      alert('Username must contain only letters and be up to 7 characters long.');
-      return false;
-    }
-    if (!passwordRegex.test(password)) {
-      alert('Password must be between 6 to 10 characters long and contain at least one uppercase letter, one lowercase letter, one special character, and one digit.');
-      return false;
-    }
-    if (password !== confirmPassword) {
-      alert('Passwords do not match.');
-      return false;
-    }
-    if (interests.length === 0) {
-      alert('Please select at least one interest.');
-      return false;
-    }
-      // If validation passes, navigate to Landing.html
-      document.getElementById('loginForm').action = 'Landing.html';
-      document.getElementById('loginForm').method = 'GET';
-    return true;
-}
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('signup-form');
+    const passwordInput = document.getElementById('password');
+    const resumeInput = document.getElementById('resume');
+    const phoneInput = document.getElementById('phone');
+    const phonePattern = /^\d{10}$/; // Regular expression to match 10 digits only
+
+
+    form.addEventListener('submit', function (event) {
+        // Validate password
+        const password = passwordInput.value;
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if (!passwordPattern.test(password)) {
+            alert('Password must contain at least one lowercase letter, one uppercase letter, one number, one special character, and be at least 8 characters long.');
+            event.preventDefault();
+            return;
+        }
+
+
+        // Validate resume file type
+        const resumeFileType = resumeInput.value.split('.').pop().toLowerCase();
+        if (resumeFileType !== 'pdf' && resumeFileType !== 'doc' && resumeFileType !== 'docx') {
+            alert('Please upload a PDF or DOC file for your resume.');
+            event.preventDefault();
+            return;
+        }
+
+
+        // Validate phone number
+        const phoneNumber = phoneInput.value;
+        if (!phonePattern.test(phoneNumber)) {
+            alert('Phone number should be 10 digits long and contain only numbers.');
+            event.preventDefault();
+            return;
+        }
+
+
+        // window.location.href = 'signUplanding.html';
+
+
+        // If all validations pass, the form will submit
+
+
+        // If validation passes, navigate to Landing.html
+        document.getElementById('signup-form').action = 'Landing.html';
+        document.getElementById('signup-form').method = 'GET';
+
+
+        if (!isValid) {
+            event.preventDefault();
+        }
+    });
+});
