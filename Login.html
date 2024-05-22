@@ -7,7 +7,7 @@
 <body>
   <div class="login">
     <h2>Login</h2>
-    <form action="form" method="post">
+    <form action="form" onsubmit="return validateForm()" method="post">
       <div class="form">
         <label for="username">Username</label>
         <input type="text" id="username" name="username" placeholder="Enter the username" required>
@@ -16,9 +16,27 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" placeholder="Enter the password" required>
       </div>
-      <a href="landing1.html">Login</a>   
+      <button type="button" >Login</button>
     </form>
   </div>
-
+  <script>
+  function validateForm() {
+    console.log("entered");
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  const usernameRegex = /^[A-Za-z]{1,7}$/;
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{10}$/;
+  if (!usernameRegex.test(username)) {
+    alert('Username must contain only letters and be up to 7 characters long.');
+    return false;
+  }
+  if (!passwordRegex.test(password)) {
+    alert('Password must be exactly 10 characters long and contain at least one uppercase letter, one lowercase letter, and one digit.');
+    return false;
+  }
+  return true;
+}
+  </script>
 </body>
 </html>
+

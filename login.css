@@ -44,6 +44,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
+    text-decoration: none;
   }
   button:hover {
     background-color: #45a049;
